@@ -10,9 +10,13 @@ XSLoader::load();
 
 =head1 Crypt::OpenSSL::VerifyX509file
 
+Crypt::OpenSSL::VerifyX509file - verifies that a public cert has been signed by a specific CA
+
+=head1 usage
+
 use Crypt::OpenSSL::VerifyX509file;
 
-if (Crypt::OpenSSL::VerifyX509file("/path/to/cabundle.pem", "/path/to/somecert.crt") ne "OK") {
+if (Crypt::OpenSSL::VerifyX509file::verify_cert("/path/to/cabundle.pem", "/path/to/somecert.crt") ne "OK") {
    die "somecert.crt not signed by cabundle.pem";
 }
 
