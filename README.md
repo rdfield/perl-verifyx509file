@@ -13,15 +13,19 @@ OpenSSL development headers, e.g. apt install libssl-dev on Debian.
 ### Installing
 
 perl Makefile.PL
+
 make
+
 make test
+
 make install
+
 
 ### Using
 
-perl -MCrypt::OpenSSL::VerifyX509file::verify_cert('/path/to/cacert.pem', '/path/to/public.crt');
+perl -MCrypt::OpenSSL::VerifyX509file -e 'my $ok = Crypt::OpenSSL::VerifyX509file::verify_cert("/path/to/cacert.pem", "/path/to/public.crt");print "$ok\n"'
 
-where cacert.pem is the public certificate of the signing CA abd public.crt is the public cert you want to verify.
+where cacert.pem is the public certificate of the signing CA and public.crt is the public cert you want to verify.
 
 ## Authors
 
